@@ -3,8 +3,6 @@ var obj = {
     setter: v => obj.val = v // ??? obj.val=ならOK, val=だとNG ???
 }
 
-
-
 var App = {
     view: function(vnode){
         return m("", {
