@@ -1,6 +1,7 @@
 // form.xと、mdl.mmbが連動
 // form.xに入力→mdl.mmbが更新
 // form2.submitを押すと、mld.mmbが100にセットされる、と同時に、form.xの値も100に更新
+// この例は、双方向のbindingがうまくいっている
 
 
 
@@ -13,9 +14,7 @@ var mdl = {
 var comp = {
     view: function(ctrl){
         return [
-            m("form#form", {
-                onsubmit: (e) => e.preventDefault()
-            }, [
+            m("form#form", [
                 m("label", "x"),
                 m("input[name=x][type=text]", {
                     oninput: m.withAttr("value", mdl.setter),
